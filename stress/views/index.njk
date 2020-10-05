@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Stress</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <style>
+        body {
+            margin-bottom: 4em;
+            background-color: #fcfcfc;
+        }
+
+        h2 {
+            margin-bottom: .8em;
+        }
+
+        .box {
+            padding: 2em;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            background-color: #fff;
+        }
+
+        .shadow {
+            box-shadow: 0 .5rem .7rem rgba(0, 0, 0, .08) !important;
+        }
+
+        input[type='checkbox'] {
+            margin-left: 0;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box border shadow">
+            <h1 class="mb-3">Stress</h1>
+            <form method="post" enctype="application/x-www-form-urlencoded" action="/stress">
+                <div class="form-group row">
+                    <div class="col-sm-8 col-lg-9">
+                        <p class="h5 float-left mr-4">--cpu</p>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="cpu1" name="cpu" value="2" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="cpu1">2</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="cpu2" name="cpu" value="3" class="custom-control-input">
+                            <label class="custom-control-label" for="cpu2">3</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="cpu3" name="cpu" value="4" class="custom-control-input">
+                            <label class="custom-control-label" for="cpu3">4</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8 col-lg-9">
+                        <p class="h5 float-left mr-4">--timeout</p>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="timeout1" name="timeout" value="20" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="timeout1">20s</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="timeout2" name="timeout" value="40" class="custom-control-input">
+                            <label class="custom-control-label" for="timeout2">40s</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="timeout3" name="timeout" value="60" class="custom-control-input">
+                            <label class="custom-control-label" for="timeout3">60s</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-lg-9">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>  
+</html>

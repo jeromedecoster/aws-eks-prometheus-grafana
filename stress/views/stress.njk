@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Stress</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <style>
+        body {
+            margin-bottom: 4em;
+            background-color: #fcfcfc;
+        }
+
+        h2 {
+            margin-bottom: .8em;
+        }
+
+        .box {
+            padding: 2em;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            background-color: #fff;
+        }
+
+        .shadow {
+            box-shadow: 0 .5rem .7rem rgba(0, 0, 0, .08) !important;
+        }
+
+        input[type='checkbox'] {
+            margin-left: 0;
+        }
+
+        .progress-bar {
+            transition: width {{ timeout }}s, opacity .5s;
+            transition-timing-function: linear;
+        }
+        
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box border shadow">
+            <h1 class="mb-3">Stress</h1>
+            
+            <figure class="highlight">
+            <pre style="margin: 0;"><code>$ stress --cpu {{ cpu }} --timeout {{ timeout }}s</code></pre>
+            </figure>
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+            </div>
+            <script>
+                document.querySelector('.progress-bar').style.width = '100%'
+                setTimeout(() => {
+                    document.querySelector('.progress-bar').style.opacity = '0'
+                }, {{ timeout * 1000 }})
+            </script>
+            <a href="/">back</a>
+        </div>
+    </body>  
+</html>

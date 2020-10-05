@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website
+  namespace: website
+  labels:
+    app: website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - name: website
+        image: jeromedecoster/stress:1.0.0
+        ports:
+        - containerPort: 3000
+          name: website
+        resources:
+          limits:
+            cpu: 0.1
+          requests:
+            cpu: 0.1
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: website-hpa
+  namespace: website
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: website
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 10
