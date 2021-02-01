@@ -7,7 +7,7 @@ help:
 setup: # install eksctl + kubectl, download kube-prometheus
 	./make.sh setup
 
-dev: # run site locally
+dev: # run the website locally
 	./make.sh dev
 	
 build: # build the production image
@@ -31,7 +31,7 @@ cluster-deploy-prometheus-grafana: # deploy prometheus + grafana service to EKS
 cluster-deploy-stress: # deploy stress service to EKS
 	./make.sh cluster-deploy-stress
 
-cluster-elb: # get the cluster ELB URI
+cluster-elb: # get the cluster ELB URL
 	./make.sh cluster-elb
 
 cluster-delete: # delete the EKS cluster

@@ -99,7 +99,7 @@ setup() {
     create-env
 }
 
-# run site locally
+# run the website locally
 dev() {
     cd "$dir/stress"
     node server
@@ -184,7 +184,7 @@ cluster-deploy-stress() {
     kubectl create -f k8s/service.yaml
 }
 
-# get the cluster ELB URI
+# get the cluster ELB URL
 cluster-elb() { 
     kubectl get svc \
         --namespace website \
